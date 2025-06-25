@@ -55,6 +55,7 @@ Partial Class frm_Results
         pb_ProfilePicture.Location = New Point(144, 9)
         pb_ProfilePicture.Name = "pb_ProfilePicture"
         pb_ProfilePicture.Size = New Size(136, 116)
+        pb_ProfilePicture.SizeMode = PictureBoxSizeMode.Zoom
         pb_ProfilePicture.TabIndex = 2
         pb_ProfilePicture.TabStop = False
         ' 
