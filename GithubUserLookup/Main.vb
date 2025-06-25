@@ -47,6 +47,8 @@ Public Class frm_Main
         Else
             Return Nothing
         End If
+
+        client.Dispose()
     End Function
 
     Public Async Function GetRepos(repoUrl As String) As Task(Of List(Of Repo))
@@ -69,6 +71,8 @@ Public Class frm_Main
         Else
             Return Nothing
         End If
+
+        client.Dispose()
     End Function
 
     Private Sub tb_Username_KeyUp(sender As Object, e As KeyEventArgs) Handles tb_Username.KeyUp

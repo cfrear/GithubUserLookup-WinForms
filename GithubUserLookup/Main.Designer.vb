@@ -22,6 +22,7 @@ Partial Class frm_Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
         Label1 = New Label()
         tb_Username = New TextBox()
         btn_Search = New Button()
@@ -57,9 +58,11 @@ Partial Class frm_Main
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Image = My.Resources.Resources.github
         PictureBox1.Location = New Point(150, 9)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(140, 71)
+        PictureBox1.Size = New Size(80, 71)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 3
         PictureBox1.TabStop = False
         ' 
@@ -67,11 +70,12 @@ Partial Class frm_Main
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(302, 92)
+        ClientSize = New Size(240, 92)
         Controls.Add(PictureBox1)
         Controls.Add(btn_Search)
         Controls.Add(tb_Username)
         Controls.Add(Label1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "frm_Main"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Github User Lookup"
