@@ -5,14 +5,21 @@ Public Class frm_Main
 
     Public Sub btn_Search_Click() Handles btn_Search.Click
 
+        'Get user from username
         Dim user As New User()
         user = GetUser().Result
 
+        'Get repos from url returned in user result
         Dim repos As New List(Of Repo)
         repos = GetRepos(user.ReposUrl).Result
 
+        'Sort and count repos
         Dim sortedRepos As List(Of Repo)
-        sortedRepos = repos.OrderDescending(Function(x As Repo) x.StargazersCount).ToList()
+        sortedRepos = repos.OrderByDescending(Function(x As Repo) x.StargazersCount).ToList()
+        Dim reposToList As Integer = Math.Min(sortedRepos.Count, 5)
+        For i = 0 To reposToList - 1
+            user.Repos.Add(sortedRepos(i))
+        Next
 
         Dim Results As New frm_Results
         Results.User = user

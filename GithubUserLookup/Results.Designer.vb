@@ -64,7 +64,7 @@ Partial Class frm_Results
         dgv_Repos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgv_Repos.Location = New Point(12, 131)
         dgv_Repos.Name = "dgv_Repos"
-        dgv_Repos.Size = New Size(268, 172)
+        dgv_Repos.Size = New Size(776, 307)
         dgv_Repos.TabIndex = 3
         ' 
         ' frm_Results

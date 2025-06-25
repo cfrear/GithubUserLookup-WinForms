@@ -16,5 +16,5 @@ Public Class User
     <JsonProperty(PropertyName:="repos_url")>
     Public Property ReposUrl As String
 
-    Public Property Repos As List(Of Repo)
+    Public Property Repos As New List(Of Repo)
 End Class
