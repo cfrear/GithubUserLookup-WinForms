@@ -26,6 +26,7 @@ Partial Class frm_Results
         lb_Location = New Label()
         pb_ProfilePicture = New PictureBox()
         dgv_Repos = New DataGridView()
+        btn_Back = New Button()
         CType(pb_ProfilePicture, ComponentModel.ISupportInitialize).BeginInit()
         CType(dgv_Repos, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -67,11 +68,21 @@ Partial Class frm_Results
         dgv_Repos.Size = New Size(776, 307)
         dgv_Repos.TabIndex = 3
         ' 
+        ' btn_Back
+        ' 
+        btn_Back.Location = New Point(713, 9)
+        btn_Back.Name = "btn_Back"
+        btn_Back.Size = New Size(75, 23)
+        btn_Back.TabIndex = 4
+        btn_Back.Text = "Back"
+        btn_Back.UseVisualStyleBackColor = True
+        ' 
         ' frm_Results
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(btn_Back)
         Controls.Add(dgv_Repos)
         Controls.Add(pb_ProfilePicture)
         Controls.Add(lb_Location)
@@ -89,4 +100,5 @@ Partial Class frm_Results
     Friend WithEvents lb_Location As Label
     Friend WithEvents pb_ProfilePicture As PictureBox
     Friend WithEvents dgv_Repos As DataGridView
+    Friend WithEvents btn_Back As Button
 End Class

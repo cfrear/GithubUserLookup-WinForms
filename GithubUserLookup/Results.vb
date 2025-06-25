@@ -9,4 +9,9 @@
         dgv_Repos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         dgv_Repos.AutoResizeColumns()
     End Sub
+
+    Private Sub btn_Back_Click(sender As Object, e As EventArgs) Handles btn_Back.Click
+        frm_Main.Show()
+        Me.Hide()
+    End Sub
 End Class
