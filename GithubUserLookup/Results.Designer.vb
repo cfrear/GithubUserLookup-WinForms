@@ -30,6 +30,7 @@ Partial Class frm_Results
         btn_Back = New Button()
         lb_TopRepos = New Label()
         lb_Bio = New Label()
+        btn_Export = New Button()
         CType(pb_ProfilePicture, ComponentModel.ISupportInitialize).BeginInit()
         CType(dgv_Repos, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -101,11 +102,21 @@ Partial Class frm_Results
         lb_Bio.TabIndex = 6
         lb_Bio.Text = "lb_Bio"
         ' 
+        ' btn_Export
+        ' 
+        btn_Export.Location = New Point(713, 122)
+        btn_Export.Name = "btn_Export"
+        btn_Export.Size = New Size(75, 23)
+        btn_Export.TabIndex = 7
+        btn_Export.Text = "Export"
+        btn_Export.UseVisualStyleBackColor = True
+        ' 
         ' frm_Results
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(btn_Export)
         Controls.Add(lb_Bio)
         Controls.Add(lb_TopRepos)
         Controls.Add(btn_Back)
@@ -130,4 +141,5 @@ Partial Class frm_Results
     Friend WithEvents btn_Back As Button
     Friend WithEvents lb_TopRepos As Label
     Friend WithEvents lb_Bio As Label
+    Friend WithEvents btn_Export As Button
 End Class

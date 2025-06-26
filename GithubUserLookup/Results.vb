@@ -1,4 +1,5 @@
-﻿Imports Windows.Win32.System
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Windows.Win32.System
 
 Public Class frm_Results
     Public User As User
@@ -38,5 +39,32 @@ Public Class frm_Results
             process.StartInfo.Arguments = User.Repos(e.RowIndex).Link
             process.Start()
         End If
+    End Sub
+
+    Private Sub btn_Export_Click(sender As Object, e As EventArgs) Handles btn_Export.Click
+
+        Dim oExcel As Object
+        Dim oBook As Object
+        Dim oSheet As Object
+
+        'Start a new workbook in Excel    
+        oExcel = CreateObject("Excel.Application")
+        oBook = oExcel.Workbooks.Add
+
+        'Add data to cells of the first worksheet in the new workbook    
+        oSheet = oBook.Worksheets(1)
+        oSheet.Range("A1").Value = "Last Name"
+        oSheet.Range("B1").Value = "First Name"
+        oSheet.Range("A1:B1").Font.Bold = True
+        oSheet.Range("A2").Value = "Doe"
+        oSheet.Range("B2").Value = "John"
+
+        Dim resourcesFolder = IO.Path.GetFullPath(Application.StartupPath & "\..\..\..\Resources\")
+        Dim fileName = User.Username & "-" & DateTime.Now.ToString("yyyyMMddTHHmmss")
+
+        'Save the Workbook and Quit Excel    
+        oBook.SaveAs(resourcesFolder & fileName)
+        MsgBox("File exported to: " & resourcesFolder & fileName)
+        oExcel.Quit
     End Sub
 End Class
