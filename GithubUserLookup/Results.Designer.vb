@@ -37,7 +37,7 @@ Partial Class frm_Results
         ' 
         lb_Username.AutoSize = True
         lb_Username.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lb_Username.Location = New Point(12, 9)
+        lb_Username.Location = New Point(154, 9)
         lb_Username.Name = "lb_Username"
         lb_Username.Size = New Size(126, 25)
         lb_Username.TabIndex = 0
@@ -47,7 +47,7 @@ Partial Class frm_Results
         ' 
         lb_Location.AutoSize = True
         lb_Location.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        lb_Location.Location = New Point(12, 34)
+        lb_Location.Location = New Point(154, 34)
         lb_Location.Name = "lb_Location"
         lb_Location.Size = New Size(74, 17)
         lb_Location.TabIndex = 1
@@ -55,7 +55,7 @@ Partial Class frm_Results
         ' 
         ' pb_ProfilePicture
         ' 
-        pb_ProfilePicture.Location = New Point(144, 9)
+        pb_ProfilePicture.Location = New Point(12, 9)
         pb_ProfilePicture.Name = "pb_ProfilePicture"
         pb_ProfilePicture.Size = New Size(136, 116)
         pb_ProfilePicture.SizeMode = PictureBoxSizeMode.Zoom
@@ -65,11 +65,11 @@ Partial Class frm_Results
         ' dgv_Repos
         ' 
         dgv_Repos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgv_Repos.Location = New Point(12, 131)
+        dgv_Repos.Location = New Point(12, 149)
         dgv_Repos.Name = "dgv_Repos"
         dgv_Repos.ReadOnly = True
         dgv_Repos.RowHeadersVisible = False
-        dgv_Repos.Size = New Size(776, 307)
+        dgv_Repos.Size = New Size(776, 289)
         dgv_Repos.TabIndex = 3
         ' 
         ' btn_Back
@@ -85,7 +85,7 @@ Partial Class frm_Results
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(12, 111)
+        Label1.Location = New Point(12, 128)
         Label1.Name = "Label1"
         Label1.Size = New Size(80, 17)
         Label1.TabIndex = 5

@@ -13,7 +13,7 @@ Public Class frm_Results
         Dim col As New DataGridViewLinkColumn()
         col.DataPropertyName = "Link"
         col.Name = "Link"
-        dgv_Repos.Columns.Insert(3, col)
+        dgv_Repos.Columns.Insert(2, col)
 
 
         dgv_Repos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
@@ -27,7 +27,11 @@ Public Class frm_Results
 
     Private Sub dgv_Repos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Repos.CellClick
         If e.ColumnIndex = 2 Then
-            System.Diagnostics.Process.Start(User.Repos(e.RowIndex).Link)
+            Dim process As New Process()
+            process.StartInfo.UseShellExecute = True
+            process.StartInfo.FileName = "chrome"
+            process.StartInfo.Arguments = User.Repos(e.RowIndex).Link
+            process.Start()
         End If
     End Sub
 End Class
