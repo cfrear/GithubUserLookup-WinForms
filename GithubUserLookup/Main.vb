@@ -23,6 +23,7 @@ Public Class frm_Main
 
         Dim Results As New frm_Results
         Results.User = user
+        Results.NumberOfRepos = nud_NumberOfRepos.Value
         Results.Show()
         Me.Hide()
     End Sub

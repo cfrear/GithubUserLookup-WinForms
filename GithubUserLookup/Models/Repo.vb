@@ -1,6 +1,7 @@
 ﻿Imports Newtonsoft.Json
 
 Public Class Repo
+
     <JsonProperty(PropertyName:="id")>
     Public Property Id As Integer
 

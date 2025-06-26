@@ -13,6 +13,9 @@ Public Class User
     <JsonProperty(PropertyName:="avatar_url")>
     Public Property PictureUrl As String
 
+    <JsonProperty(PropertyName:="bio")>
+    Public Property Bio As String
+
     <JsonProperty(PropertyName:="repos_url")>
     Public Property ReposUrl As String
 

@@ -28,7 +28,8 @@ Partial Class frm_Results
         pb_ProfilePicture = New PictureBox()
         dgv_Repos = New DataGridView()
         btn_Back = New Button()
-        Label1 = New Label()
+        lb_TopRepos = New Label()
+        lb_Bio = New Label()
         CType(pb_ProfilePicture, ComponentModel.ISupportInitialize).BeginInit()
         CType(dgv_Repos, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -81,22 +82,32 @@ Partial Class frm_Results
         btn_Back.Text = "Back"
         btn_Back.UseVisualStyleBackColor = True
         ' 
-        ' Label1
+        ' lb_TopRepos
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(12, 128)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(80, 17)
-        Label1.TabIndex = 5
-        Label1.Text = "Top 5 Repos:"
+        lb_TopRepos.AutoSize = True
+        lb_TopRepos.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        lb_TopRepos.Location = New Point(12, 128)
+        lb_TopRepos.Name = "lb_TopRepos"
+        lb_TopRepos.Size = New Size(79, 17)
+        lb_TopRepos.TabIndex = 5
+        lb_TopRepos.Text = "lb_TopRepos"
+        ' 
+        ' lb_Bio
+        ' 
+        lb_Bio.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        lb_Bio.Location = New Point(154, 66)
+        lb_Bio.Name = "lb_Bio"
+        lb_Bio.Size = New Size(475, 59)
+        lb_Bio.TabIndex = 6
+        lb_Bio.Text = "lb_Bio"
         ' 
         ' frm_Results
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Controls.Add(Label1)
+        Controls.Add(lb_Bio)
+        Controls.Add(lb_TopRepos)
         Controls.Add(btn_Back)
         Controls.Add(dgv_Repos)
         Controls.Add(pb_ProfilePicture)
@@ -117,5 +128,6 @@ Partial Class frm_Results
     Friend WithEvents pb_ProfilePicture As PictureBox
     Friend WithEvents dgv_Repos As DataGridView
     Friend WithEvents btn_Back As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lb_TopRepos As Label
+    Friend WithEvents lb_Bio As Label
 End Class
