@@ -16,7 +16,7 @@ Public Class frm_Main
         'Sort and count repos
         Dim sortedRepos As List(Of Repo)
         sortedRepos = repos.OrderByDescending(Function(x As Repo) x.StargazersCount).ToList()
-        Dim reposToList As Integer = Math.Min(sortedRepos.Count, 5)
+        Dim reposToList As Integer = Math.Min(sortedRepos.Count, nud_NumberOfRepos.Value)
         For i = 0 To reposToList - 1
             user.Repos.Add(sortedRepos(i))
         Next

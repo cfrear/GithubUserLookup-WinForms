@@ -7,9 +7,9 @@ Public Class frm_Results
         lb_Location.Text = User.Location
         dgv_Repos.DataSource = User.Repos
         pb_ProfilePicture.LoadAsync(User.PictureUrl)
+
+        'Hide existing "Link" column, and add new LinkColumn version to show text as hyperlink
         dgv_Repos.Columns("Link").Visible = False
-
-
         Dim col As New DataGridViewLinkColumn()
         col.DataPropertyName = "Link"
         col.Name = "Link"
@@ -25,7 +25,7 @@ Public Class frm_Results
         Me.Hide()
     End Sub
 
-    Private Sub dgv_Repos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Repos.CellClick
+    Private Sub dgv_Repos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Repos.CellContentClick
         If e.ColumnIndex = 2 Then
             Dim process As New Process()
             process.StartInfo.UseShellExecute = True

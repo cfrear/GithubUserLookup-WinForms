@@ -27,7 +27,10 @@ Partial Class frm_Main
         tb_Username = New TextBox()
         btn_Search = New Button()
         PictureBox1 = New PictureBox()
+        Label2 = New Label()
+        nud_NumberOfRepos = New NumericUpDown()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(nud_NumberOfRepos, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -66,11 +69,31 @@ Partial Class frm_Main
         PictureBox1.TabIndex = 3
         PictureBox1.TabStop = False
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(12, 106)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(103, 15)
+        Label2.TabIndex = 4
+        Label2.Text = "Number of Repos:"
+        ' 
+        ' nud_NumberOfRepos
+        ' 
+        nud_NumberOfRepos.Location = New Point(12, 124)
+        nud_NumberOfRepos.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+        nud_NumberOfRepos.Name = "nud_NumberOfRepos"
+        nud_NumberOfRepos.Size = New Size(120, 23)
+        nud_NumberOfRepos.TabIndex = 5
+        nud_NumberOfRepos.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        ' 
         ' frm_Main
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(240, 92)
+        ClientSize = New Size(240, 154)
+        Controls.Add(nud_NumberOfRepos)
+        Controls.Add(Label2)
         Controls.Add(PictureBox1)
         Controls.Add(btn_Search)
         Controls.Add(tb_Username)
@@ -80,6 +103,7 @@ Partial Class frm_Main
         StartPosition = FormStartPosition.CenterScreen
         Text = "Github User Lookup"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(nud_NumberOfRepos, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -88,5 +112,7 @@ Partial Class frm_Main
     Friend WithEvents tb_Username As TextBox
     Friend WithEvents btn_Search As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents nud_NumberOfRepos As NumericUpDown
 
 End Class

@@ -14,5 +14,5 @@ Public Class Repo
     Public Property Description As String
 
     <JsonProperty(PropertyName:="stargazers_count")>
-    Public Property StargazersCount As String
+    Public Property StargazersCount As Integer
 End Class
