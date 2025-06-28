@@ -51,13 +51,28 @@ Public Class frm_Results
         oExcel = CreateObject("Excel.Application")
         oBook = oExcel.Workbooks.Add
 
-        'Add data to cells of the first worksheet in the new workbook    
+        'Add user data  
         oSheet = oBook.Worksheets(1)
-        oSheet.Range("A1").Value = "Last Name"
-        oSheet.Range("B1").Value = "First Name"
-        oSheet.Range("A1:B1").Font.Bold = True
-        oSheet.Range("A2").Value = "Doe"
-        oSheet.Range("B2").Value = "John"
+        oSheet.Range("A1").Value = "Github User Lookup"
+        oSheet.Range("A2").Value = User.Username
+        oSheet.Range("A3").Value = User.Location
+        oSheet.Range("A5").Value = "Repos:"
+
+        'Add repo data
+        oSheet.Range("B6").Value = "Name"
+        oSheet.Range("C6").Value = "Link"
+        oSheet.Range("D6").Value = "Description"
+        oSheet.Range("E6").Value = "Stargazers"
+        For i = 0 To User.Repos.Count - 1
+            oSheet.Range("B" & 7 + i).Value = User.Repos(i).Name
+            oSheet.Range("C" & 7 + i).Value = User.Repos(i).Link
+            oSheet.Range("D" & 7 + i).Value = User.Repos(i).Description
+            oSheet.Range("E" & 7 + i).Value = User.Repos(i).StargazersCount
+        Next
+
+        'Formatting
+        oSheet.Range("A1:E1").EntireColumn.AutoFit
+        oSheet.Range("A1, A5, B6:E6").Font.Bold = True
 
         Dim resourcesFolder = IO.Path.GetFullPath(Application.StartupPath & "\..\..\..\Resources\")
         Dim fileName = User.Username & "-" & DateTime.Now.ToString("yyyyMMddTHHmmss")
