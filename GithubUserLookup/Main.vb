@@ -15,7 +15,12 @@ Public Class frm_Main
 
         'Sort and count repos
         Dim sortedRepos As List(Of Repo)
-        sortedRepos = repos.OrderByDescending(Function(x As Repo) x.StargazersCount).ToList()
+        If rb_Stargazers.Checked Then
+            sortedRepos = repos.OrderByDescending(Function(x As Repo) x.StargazersCount).ToList()
+        ElseIf rb_Name.Checked Then
+            sortedRepos = repos.OrderBy(Function(x As Repo) x.Name).ToList()
+        End If
+
         Dim reposToList As Integer = Math.Min(sortedRepos.Count, nud_NumberOfRepos.Value)
         For i = 0 To reposToList - 1
             user.Repos.Add(sortedRepos(i))

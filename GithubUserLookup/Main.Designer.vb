@@ -29,6 +29,9 @@ Partial Class frm_Main
         PictureBox1 = New PictureBox()
         Label2 = New Label()
         nud_NumberOfRepos = New NumericUpDown()
+        Label3 = New Label()
+        rb_Stargazers = New RadioButton()
+        rb_Name = New RadioButton()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(nud_NumberOfRepos, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -83,15 +86,49 @@ Partial Class frm_Main
         nud_NumberOfRepos.Location = New Point(12, 124)
         nud_NumberOfRepos.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
         nud_NumberOfRepos.Name = "nud_NumberOfRepos"
-        nud_NumberOfRepos.Size = New Size(120, 23)
+        nud_NumberOfRepos.Size = New Size(103, 23)
         nud_NumberOfRepos.TabIndex = 5
         nud_NumberOfRepos.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(136, 106)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(82, 15)
+        Label3.TabIndex = 6
+        Label3.Text = "Sort Repos By:"
+        ' 
+        ' rb_Stargazers
+        ' 
+        rb_Stargazers.AutoSize = True
+        rb_Stargazers.Checked = True
+        rb_Stargazers.Location = New Point(136, 124)
+        rb_Stargazers.Name = "rb_Stargazers"
+        rb_Stargazers.Size = New Size(78, 19)
+        rb_Stargazers.TabIndex = 7
+        rb_Stargazers.TabStop = True
+        rb_Stargazers.Text = "Stargazers"
+        rb_Stargazers.UseVisualStyleBackColor = True
+        ' 
+        ' rb_Name
+        ' 
+        rb_Name.AutoSize = True
+        rb_Name.Location = New Point(136, 149)
+        rb_Name.Name = "rb_Name"
+        rb_Name.Size = New Size(57, 19)
+        rb_Name.TabIndex = 8
+        rb_Name.Text = "Name"
+        rb_Name.UseVisualStyleBackColor = True
         ' 
         ' frm_Main
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(240, 154)
+        ClientSize = New Size(240, 179)
+        Controls.Add(rb_Name)
+        Controls.Add(rb_Stargazers)
+        Controls.Add(Label3)
         Controls.Add(nud_NumberOfRepos)
         Controls.Add(Label2)
         Controls.Add(PictureBox1)
@@ -114,5 +151,8 @@ Partial Class frm_Main
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents nud_NumberOfRepos As NumericUpDown
+    Friend WithEvents Label3 As Label
+    Friend WithEvents rb_Stargazers As RadioButton
+    Friend WithEvents rb_Name As RadioButton
 
 End Class

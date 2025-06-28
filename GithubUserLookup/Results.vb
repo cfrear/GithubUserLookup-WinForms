@@ -80,6 +80,7 @@ Public Class frm_Results
 
         'Formatting
         oSheet.Range("A1:E1").EntireColumn.AutoFit
+        oSheet.Range("C6").ColumnWidth = 100
         oSheet.Range("A1, A5, B6:E6").Font.Bold = True
 
         Dim resourcesFolder = IO.Path.GetFullPath(Application.StartupPath & "\..\..\..\Resources\")
