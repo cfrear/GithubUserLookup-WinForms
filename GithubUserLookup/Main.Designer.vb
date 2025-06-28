@@ -47,6 +47,8 @@ Partial Class frm_Main
         ' 
         ' tb_Username
         ' 
+        tb_Username.AutoCompleteMode = AutoCompleteMode.Suggest
+        tb_Username.AutoCompleteSource = AutoCompleteSource.CustomSource
         tb_Username.Location = New Point(12, 27)
         tb_Username.Name = "tb_Username"
         tb_Username.PlaceholderText = "Username"

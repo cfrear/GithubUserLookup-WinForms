@@ -1,4 +1,5 @@
-﻿Imports System.Net.Cache
+﻿Imports System.IO
+Imports System.Net.Cache
 Imports System.Net.Http
 
 Public Class frm_Main
@@ -25,6 +26,8 @@ Public Class frm_Main
         For i = 0 To reposToList - 1
             user.Repos.Add(sortedRepos(i))
         Next
+
+        AddToSearchHistory()
 
         Dim Results As New frm_Results
         Results.User = user
@@ -85,5 +88,26 @@ Public Class frm_Main
         If e.KeyCode = Keys.Enter Then
             btn_Search.PerformClick()
         End If
+    End Sub
+
+    Private Sub AddToSearchHistory()
+        Dim path As String = IO.Path.GetFullPath(Application.StartupPath & "\..\..\..\Resources\") & "searchhistory.txt"
+        If File.Exists(path) = False Then
+            'Create a file to write to.
+            Using sw As StreamWriter = File.CreateText(path)
+                sw.WriteLine(tb_Username.Text)
+            End Using
+        Else
+            'Write to existing file
+            File.AppendAllText(path, tb_Username.Text & Environment.NewLine)
+        End If
+
+        Using sr As StreamReader = New StreamReader(path)
+            sr.
+        End Using
+        Dim history As New AutoCompleteStringCollection
+        history =
+        tb_Username.AutoCompleteCustomSource =
+
     End Sub
 End Class
