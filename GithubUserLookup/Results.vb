@@ -1,4 +1,6 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+﻿Imports System.IO
+Imports System.Net
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports Windows.Win32.System
 
 Public Class frm_Results
@@ -60,15 +62,21 @@ Public Class frm_Results
 
         'Add repo data
         oSheet.Range("B6").Value = "Name"
-        oSheet.Range("C6").Value = "Link"
-        oSheet.Range("D6").Value = "Description"
-        oSheet.Range("E6").Value = "Stargazers"
+        oSheet.Range("C6").Value = "Description"
+        oSheet.Range("D6").Value = "Stargazers"
         For i = 0 To User.Repos.Count - 1
-            oSheet.Range("B" & 7 + i).Value = User.Repos(i).Name
-            oSheet.Range("C" & 7 + i).Value = User.Repos(i).Link
-            oSheet.Range("D" & 7 + i).Value = User.Repos(i).Description
-            oSheet.Range("E" & 7 + i).Value = User.Repos(i).StargazersCount
+            'Add link to repo on name cell
+            oSheet.Hyperlinks.Add(oSheet.Range("B" & 7 + i), User.Repos(i).Link, "", "", User.Repos(i).Name)
+            oSheet.Range("C" & 7 + i).Value = User.Repos(i).Description
+            oSheet.Range("D" & 7 + i).Value = User.Repos(i).StargazersCount
         Next
+
+        'Add Image
+        'Dim webClient As New WebClient
+        'Dim imageData As Byte() = webClient.DownloadData(User.PictureUrl)
+        'Dim objImage As New MemoryStream(imageData)
+        'Dim image As Image = Image.FromStream(objImage)
+        'oSheet.Pictures.Add(image)
 
         'Formatting
         oSheet.Range("A1:E1").EntireColumn.AutoFit
