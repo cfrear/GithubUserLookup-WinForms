@@ -17,31 +17,37 @@ Public Class frm_Main
         Dim user As New User()
         user = GetUser().Result
 
+        If user Is Nothing Then
+            Exit Sub
+        End If
+
         'Get repos from url returned in user result
         Dim repos As New List(Of Repo)
         repos = GetRepos(user.ReposUrl).Result
 
-        'Sort and count repos
-        Dim sortedRepos As List(Of Repo)
-        If rb_Stargazers.Checked Then
-            sortedRepos = repos.OrderByDescending(Function(x As Repo) x.StargazersCount).ToList()
-        ElseIf rb_Name.Checked Then
-            sortedRepos = repos.OrderBy(Function(x As Repo) x.Name).ToList()
+        If repos IsNot Nothing Or repos.Count > 1 Then
+            'Sort and count repos
+            Dim sortedRepos As List(Of Repo)
+            If rb_Stargazers.Checked Then
+                sortedRepos = repos.OrderByDescending(Function(x As Repo) x.StargazersCount).ToList()
+            ElseIf rb_Name.Checked Then
+                sortedRepos = repos.OrderBy(Function(x As Repo) x.Name).ToList()
+            End If
+
+            Dim reposToList As Integer = Math.Min(sortedRepos.Count, nud_NumberOfRepos.Value)
+            For i = 0 To reposToList - 1
+                user.Repos.Add(sortedRepos(i))
+            Next
+
+            AddToSearchHistory()
+            ReadSearchHistory()
+
+            Dim Results As New frm_Results
+            Results.User = user
+            Results.NumberOfRepos = nud_NumberOfRepos.Value
+            Results.Show()
+            Me.Hide()
         End If
-
-        Dim reposToList As Integer = Math.Min(sortedRepos.Count, nud_NumberOfRepos.Value)
-        For i = 0 To reposToList - 1
-            user.Repos.Add(sortedRepos(i))
-        Next
-
-        AddToSearchHistory()
-        ReadSearchHistory()
-
-        Dim Results As New frm_Results
-        Results.User = user
-        Results.NumberOfRepos = nud_NumberOfRepos.Value
-        Results.Show()
-        Me.Hide()
     End Sub
 
     Public Async Function GetUser() As Task(Of User)
