@@ -9,6 +9,10 @@ Public Class frm_Main
 
     Public Sub btn_Search_Click() Handles btn_Search.Click
 
+        If tb_Username.Text Is Nothing Or tb_Username.Text = "" Then
+            Exit Sub
+        End If
+
         'Get user from username
         Dim user As New User()
         user = GetUser().Result
@@ -120,6 +124,8 @@ Public Class frm_Main
     End Sub
 
     Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ReadSearchHistory()
+        If File.Exists(SearchHistoryPath) Then
+            ReadSearchHistory()
+        End If
     End Sub
 End Class
