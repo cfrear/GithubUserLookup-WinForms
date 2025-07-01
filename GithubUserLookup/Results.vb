@@ -7,12 +7,20 @@ Public Class frm_Results
     Public User As User
     Public NumberOfRepos As Integer
     Private Sub Results_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lb_TopRepos.Text = "Top " & NumberOfRepos & " Repos:"
+        If NumberOfRepos > 0 Then
+            lb_TopRepos.Text = "Top " & NumberOfRepos & " Repos:"
+        Else
+            lb_TopRepos.Text = "No Repos Found"
+        End If
+
         lb_Username.Text = User.Username
         lb_Location.Text = User.Location
         lb_Bio.Text = User.Bio
-        dgv_Repos.DataSource = User.Repos
         pb_ProfilePicture.LoadAsync(User.PictureUrl)
+
+        If User.Repos IsNot Nothing And User.Repos.Count > 0 Then
+            dgv_Repos.DataSource = User.Repos
+        End If
 
         'Hide existing "Name" and "Link" columns, and add new LinkColumn version to show text as hyperlink
         dgv_Repos.Columns("Name").Visible = False
@@ -24,7 +32,6 @@ Public Class frm_Results
 
         dgv_Repos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         dgv_Repos.AutoResizeColumns()
-        'dgv_Repos.Columns(4).DefaultCellStyle.WrapMode = DataGridViewTriState.True
 
     End Sub
 

@@ -25,7 +25,7 @@ Public Class frm_Main
         Dim repos As New List(Of Repo)
         repos = GetRepos(user.ReposUrl).Result
 
-        If repos IsNot Nothing Or repos.Count > 1 Then
+        If repos IsNot Nothing And repos.Count > 0 Then
             'Sort and count repos
             Dim sortedRepos As List(Of Repo)
             If rb_Stargazers.Checked Then
@@ -38,16 +38,16 @@ Public Class frm_Main
             For i = 0 To reposToList - 1
                 user.Repos.Add(sortedRepos(i))
             Next
-
-            AddToSearchHistory()
-            ReadSearchHistory()
-
-            Dim Results As New frm_Results
-            Results.User = user
-            Results.NumberOfRepos = nud_NumberOfRepos.Value
-            Results.Show()
-            Me.Hide()
         End If
+        AddToSearchHistory()
+        ReadSearchHistory()
+
+        Dim Results As New frm_Results
+        Results.User = user
+        Results.NumberOfRepos = nud_NumberOfRepos.Value
+        Results.Show()
+        Me.Hide()
+
     End Sub
 
     Public Async Function GetUser() As Task(Of User)
