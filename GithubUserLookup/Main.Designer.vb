@@ -32,8 +32,10 @@ Partial Class frm_Main
         Label3 = New Label()
         rb_Stargazers = New RadioButton()
         rb_Name = New RadioButton()
+        grp_Filters = New GroupBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(nud_NumberOfRepos, ComponentModel.ISupportInitialize).BeginInit()
+        grp_Filters.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -59,7 +61,7 @@ Partial Class frm_Main
         ' 
         btn_Search.Location = New Point(12, 56)
         btn_Search.Name = "btn_Search"
-        btn_Search.Size = New Size(75, 23)
+        btn_Search.Size = New Size(112, 23)
         btn_Search.TabIndex = 2
         btn_Search.Text = "Search"
         btn_Search.UseVisualStyleBackColor = True
@@ -77,7 +79,7 @@ Partial Class frm_Main
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(12, 106)
+        Label2.Location = New Point(9, 21)
         Label2.Name = "Label2"
         Label2.Size = New Size(103, 15)
         Label2.TabIndex = 4
@@ -85,7 +87,7 @@ Partial Class frm_Main
         ' 
         ' nud_NumberOfRepos
         ' 
-        nud_NumberOfRepos.Location = New Point(12, 124)
+        nud_NumberOfRepos.Location = New Point(9, 39)
         nud_NumberOfRepos.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
         nud_NumberOfRepos.Name = "nud_NumberOfRepos"
         nud_NumberOfRepos.Size = New Size(103, 23)
@@ -95,7 +97,7 @@ Partial Class frm_Main
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(136, 106)
+        Label3.Location = New Point(130, 21)
         Label3.Name = "Label3"
         Label3.Size = New Size(82, 15)
         Label3.TabIndex = 6
@@ -105,7 +107,7 @@ Partial Class frm_Main
         ' 
         rb_Stargazers.AutoSize = True
         rb_Stargazers.Checked = True
-        rb_Stargazers.Location = New Point(136, 124)
+        rb_Stargazers.Location = New Point(130, 39)
         rb_Stargazers.Name = "rb_Stargazers"
         rb_Stargazers.Size = New Size(78, 19)
         rb_Stargazers.TabIndex = 7
@@ -116,23 +118,33 @@ Partial Class frm_Main
         ' rb_Name
         ' 
         rb_Name.AutoSize = True
-        rb_Name.Location = New Point(136, 149)
+        rb_Name.Location = New Point(130, 64)
         rb_Name.Name = "rb_Name"
         rb_Name.Size = New Size(57, 19)
         rb_Name.TabIndex = 8
         rb_Name.Text = "Name"
         rb_Name.UseVisualStyleBackColor = True
         ' 
+        ' grp_Filters
+        ' 
+        grp_Filters.Controls.Add(Label2)
+        grp_Filters.Controls.Add(rb_Name)
+        grp_Filters.Controls.Add(nud_NumberOfRepos)
+        grp_Filters.Controls.Add(rb_Stargazers)
+        grp_Filters.Controls.Add(Label3)
+        grp_Filters.Location = New Point(12, 108)
+        grp_Filters.Name = "grp_Filters"
+        grp_Filters.Size = New Size(218, 91)
+        grp_Filters.TabIndex = 9
+        grp_Filters.TabStop = False
+        grp_Filters.Text = "Filters"
+        ' 
         ' frm_Main
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(240, 179)
-        Controls.Add(rb_Name)
-        Controls.Add(rb_Stargazers)
-        Controls.Add(Label3)
-        Controls.Add(nud_NumberOfRepos)
-        Controls.Add(Label2)
+        ClientSize = New Size(240, 211)
+        Controls.Add(grp_Filters)
         Controls.Add(PictureBox1)
         Controls.Add(btn_Search)
         Controls.Add(tb_Username)
@@ -143,6 +155,8 @@ Partial Class frm_Main
         Text = "Github User Lookup"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(nud_NumberOfRepos, ComponentModel.ISupportInitialize).EndInit()
+        grp_Filters.ResumeLayout(False)
+        grp_Filters.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -156,5 +170,6 @@ Partial Class frm_Main
     Friend WithEvents Label3 As Label
     Friend WithEvents rb_Stargazers As RadioButton
     Friend WithEvents rb_Name As RadioButton
+    Friend WithEvents grp_Filters As GroupBox
 
 End Class

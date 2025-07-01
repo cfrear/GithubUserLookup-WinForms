@@ -31,6 +31,7 @@ Public Class frm_Main
         Next
 
         AddToSearchHistory()
+        ReadSearchHistory()
 
         Dim Results As New frm_Results
         Results.User = user

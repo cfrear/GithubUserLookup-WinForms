@@ -39,7 +39,7 @@ Partial Class frm_Results
         ' 
         lb_Username.AutoSize = True
         lb_Username.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lb_Username.Location = New Point(154, 9)
+        lb_Username.Location = New Point(145, 9)
         lb_Username.Name = "lb_Username"
         lb_Username.Size = New Size(126, 25)
         lb_Username.TabIndex = 0
@@ -49,7 +49,7 @@ Partial Class frm_Results
         ' 
         lb_Location.AutoSize = True
         lb_Location.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        lb_Location.Location = New Point(154, 34)
+        lb_Location.Location = New Point(145, 34)
         lb_Location.Name = "lb_Location"
         lb_Location.Size = New Size(74, 17)
         lb_Location.TabIndex = 1
@@ -59,7 +59,7 @@ Partial Class frm_Results
         ' 
         pb_ProfilePicture.Location = New Point(12, 9)
         pb_ProfilePicture.Name = "pb_ProfilePicture"
-        pb_ProfilePicture.Size = New Size(136, 116)
+        pb_ProfilePicture.Size = New Size(134, 116)
         pb_ProfilePicture.SizeMode = PictureBoxSizeMode.Zoom
         pb_ProfilePicture.TabIndex = 2
         pb_ProfilePicture.TabStop = False
@@ -96,7 +96,7 @@ Partial Class frm_Results
         ' lb_Bio
         ' 
         lb_Bio.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        lb_Bio.Location = New Point(154, 60)
+        lb_Bio.Location = New Point(145, 60)
         lb_Bio.Name = "lb_Bio"
         lb_Bio.Size = New Size(443, 59)
         lb_Bio.TabIndex = 6
