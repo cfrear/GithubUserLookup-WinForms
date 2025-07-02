@@ -12,8 +12,8 @@ We require you to create an ASP.Net MVC (.Net Framework only) website with the f
 - Ensure you consider valid input. Also consider what happens if the user cannot be found or if they don't have any repositories.
 - Unit tests MUST be included.
 
-I thought this was an interesting task and so have rebuilt what I had previously done, using tech that feels more relevant to this role.
-I have also expended upon the original task brief and added some additional features that I feel could demonstrate the sort of skills and understanding that would be relevant to the role.
+I thought this was an interesting task, so I decided to rebuild what I had previously done, using tech that is better suited to this role.
+I have also expanded upon the original task brief and added some additional features that I feel could demonstrate the sort of skills and understanding that would be relevant to the role.
 
 
 This application assumes that the host machine has 2 other applications installed:
@@ -31,7 +31,7 @@ Previous searches are stored in a search history document, to make repeated sear
 
 Known Issues:
 - The Github Repos API returns paginated results which are sorted alphanumerically. In order to retrieve more that 100 repos, changes would need to be made to the code to retrieve each page of 100 results.
-Currently, the maximum number of repos that can be returned is 100, and they will all be from the first page and therefore all from the beginning of the alphanumeric alphabet.
+Currently, the maximum number of repos that can be returned is 100, and they will all be from the first page; therefore all from the beginning of the alphanumeric alphabet.
 This means that in cases where a user has a large number of repos (eg, microsoft have 6000+), all of the repos returned have a name beginning with numbers, special characters, or "A".
 
 - When selecting a username from the search history, the search is executed immediately upon click. Giving no time to change the filters. 
